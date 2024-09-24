@@ -11,7 +11,6 @@ Aleo 挖礦
 https://zk.work/  
 資料來源：https://zk.work/zhTW/aleo/start  
 資料來源：https://github.com/6block/zkwork_aleo_gpu_worker?tab=readme-ov-file#mining-tutorial  
----  
 https://www.h9.com/  
 資料來源：https://www.h9.com/statistics/aleo  
 ​​資料來源：https://h9support.notion.site/Aleo-5694234dd8694d59931698fac1d4c448  
