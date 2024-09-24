@@ -6,7 +6,16 @@ Aleo 基金會執行董事 Alex Pruden 很自豪地宣布 Aleo 主網正式上�
 歷史上第一次，開發人員可以存取一個保護隱私、無需許可且可編程的平台。  
 解決網路最大的挑戰在資料外洩和隱私侵犯已成為常態的世界中，零知識對於奪回我們個人資料的機密性至關重要。  
 資料來源：Aleo blog https://aleo.org/post/announcing-aleo-mainnet/  
-
+  
+Aleo 挖礦  
+https://zk.work/
+資料來源：https://zk.work/zhTW/aleo/start  
+資料來源：https://github.com/6block/zkwork_aleo_gpu_worker?tab=readme-ov-file#mining-tutorial  
+---  
+https://www.h9.com/
+資料來源：https://www.h9.com/statistics/aleo  
+​​資料來源：https://h9support.notion.site/Aleo-5694234dd8694d59931698fac1d4c448  
+  
 Aleo 質押  
 安全的管理您的 Aleo 積分和參與質押至關重要。  
 https://www.leo.app/  
