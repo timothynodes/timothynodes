@@ -27,7 +27,7 @@ https://hc.foxwallet.com/docs/aleo/
 https://avail.global/  
 https://sotertech.io/  
 https://www.staking.xyz/  
-（雖然不是錢包，但 stake.xyz 公開了原生和流動質押）  
+（雖然不是錢包，但公開了原生和流動質押）  
 https://www.pondo.xyz/  
 請務必記住，Aleo 社區並不認可特定的工具或服務。始終進行自己的研究，驗證您計劃使用的任何工具的真實性和安全性，並根據您的個人需求和風險承受能力做出明智的決定。  
 請繼續關注更多更新和資源，以幫助您暢遊 Aleo 質押世界。快樂質押！  
