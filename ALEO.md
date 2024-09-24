@@ -8,11 +8,11 @@ Aleo 基金會執行董事 Alex Pruden 很自豪地宣布 Aleo 主網正式上�
 資料來源：Aleo blog https://aleo.org/post/announcing-aleo-mainnet/  
   
 Aleo 挖礦  
-https://zk.work/
+https://zk.work/  
 資料來源：https://zk.work/zhTW/aleo/start  
 資料來源：https://github.com/6block/zkwork_aleo_gpu_worker?tab=readme-ov-file#mining-tutorial  
 ---  
-https://www.h9.com/
+https://www.h9.com/  
 資料來源：https://www.h9.com/statistics/aleo  
 ​​資料來源：https://h9support.notion.site/Aleo-5694234dd8694d59931698fac1d4c448  
   
