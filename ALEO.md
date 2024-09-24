@@ -15,6 +15,10 @@ https://www.h9.com/
 資料來源：https://www.h9.com/statistics/aleo  
 ​​資料來源：https://h9support.notion.site/Aleo-5694234dd8694d59931698fac1d4c448  
   
+Aleo 代幣如何鎖定，懸崖是什麼？ 
+Aleo 基金會員工、合夥人、激勵計畫參與者和其他貢獻者的所有Aleo 代幣聲明，無論其地理位置或來源國，  
+都將有1 年鎖定期，在此期間Aleo 代幣的交易將受到限制。基金會員工將受到更嚴格的鎖定條款，以確保公平。  
+  
 Aleo 質押  
 安全的管理您的 Aleo 積分和參與質押至關重要。  
 https://www.leo.app/  
