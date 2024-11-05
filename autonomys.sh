@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.05.22.48"
-AUTONOMYS_DIR="~/autonomys"
+AUTONOMYS_VERSION="24.11.05.23.05"
+AUTONOMYS_DIR="autonomys"
 
 space_acres() {
+cd ~
 mkdir -p "$AUTONOMYS_DIR"
-if [ ! -f "$AUTONOMYS_DIR/space-acres-0.1.38-x86_64.AppImage" ]; then
+cd "$AUTONOMYS_DIR"
+if [ ! -f "space-acres-0.1.38-x86_64.AppImage" ]; then  
   wget https://github.com/autonomys/space-acres/releases/download/0.1.38/space-acres-0.1.38-x86_64.AppImage
 fi
-cd "$AUTONOMYS_DIR"
 chmod u+x "space-acres-0.1.38-x86_64.AppImage"
 ./space-acres-0.1.38-x86_64.AppImage"  --appimage-extract
 ./squashfs-root/AppRun
