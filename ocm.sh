@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.05.21.05"
+OCM_VERSION="24.11.05.21.13"
 
 update_ocm_script() {
 cd ~ && rm -rf ocm.sh && wget https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh
@@ -11,8 +11,7 @@ chmod u+x ocm.sh && ./ocm.sh
 }
 
 select_item() {
-    clear
-    echo "ocm.sh version 24.11.05.21.05"
+    echo "ocm.sh version 24.11.05.21.13"
     echo "1. Update ocm.sh"
     echo "0. Exit"
     read -rp "Select item:" item
