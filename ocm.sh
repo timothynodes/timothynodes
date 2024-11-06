@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.06.23.15"
+OCM_VERSION="24.11.06.23.40"
 
 update_ocm_script() {
-# cd ~ && rm -rf ocm.sh && wget https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
-cd ~ && rm -rf ocm.sh_new && wget https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh -O ocm.sh_new
+# cd ~ && rm -rf ocm.sh && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
+cd ~ && rm -rf ocm.sh_new && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh -O ocm.sh_new
 if [ ! -f "~/ocm.sh_new" ]; then
   rm -rf ocm.sh && mv ocm.sh_new ocm.sh && chmod u+x ocm.sh
 fi
@@ -17,7 +17,7 @@ sleep 1s
 }
 
 select_item() {
-    echo "ocm.sh version 24.11.06.23.15"
+    echo "ocm.sh version 24.11.06.23.40"
     echo "https://t.me/ocm_g"
     echo "1. Update ocm.sh"
     echo "2. Autonomys(Subspace)(OS:Ubuntu desktop)"
@@ -28,7 +28,7 @@ select_item() {
         update_ocm_script
         ;;
     2)
-        cd ~ && rm -rf autonomys.sh && wget https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/autonomys.sh && chmod u+x autonomys.sh && ./autonomys.sh
+        cd ~ && rm -rf autonomys.sh && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/autonomys.sh && chmod u+x autonomys.sh && ./autonomys.sh
         ;;
     0)
         exit 1
