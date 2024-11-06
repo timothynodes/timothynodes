@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.06.23.03"
+OCM_VERSION="24.11.06.23.04"
 
 update_ocm_script() {
 # cd ~ && rm -rf ocm.sh && wget https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
@@ -15,8 +15,9 @@ chmod u+x ocm.sh && ./ocm.sh
 }
 
 select_item() {
-    echo "ocm.sh version 24.11.06.23.03"
+    echo "ocm.sh version 24.11.06.23.04"
     echo "https://t.me/ocm_g"
+    update_ocm_script
     echo "1. Update ocm.sh"
     echo "2. Autonomys(Subspace)(OS:Ubuntu desktop)"
     echo "0. Exit"
