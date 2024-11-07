@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.06.23.15"
+AUTONOMYS_VERSION="24.11.07.11.50"
 AUTONOMYS_DIR="autonomys"
 
 space_acres() {
 cd ~
 mkdir -p "$AUTONOMYS_DIR"
 cd "$AUTONOMYS_DIR"
-if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then  
+if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
+  sudo echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list && sudo apt update && sudo apt install libc6 -y
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
   chmod u+x space-acres-0.2.0-x86_64.AppImage
   ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
