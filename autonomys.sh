@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.24"
+AUTONOMYS_VERSION="24.11.08.16.30"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -13,11 +13,11 @@ change_dir() {
   cd ~
   mkdir -p "$AUTONOMYS_DIR"
   cd "$AUTONOMYS_DIR"
+  mkdir -p "$PATH_TO_FARM"
 }
 
-chmod() {
-  chmod u+x space-acres-*
-  chmod u+x subspace-*
+chmod_wget() {
+  chmod u+x s*
 }
 
 space_acres() {
@@ -29,7 +29,7 @@ if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
-  chmod
+  chmod_wget
   ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
 fi
 ./squashfs-root/AppRun
@@ -44,7 +44,7 @@ if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06
-  chmod
+  chmod_wget
 fi
 if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
