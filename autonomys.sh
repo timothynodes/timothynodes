@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.12.33"
+AUTONOMYS_VERSION="24.11.08.16.24"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -23,8 +23,9 @@ chmod() {
 space_acres() {
 change_dir
 if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
-  # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
+  sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
@@ -37,8 +38,9 @@ fi
 space_farmer() {
 change_dir
 if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
-  # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  cho "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
+  sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06
