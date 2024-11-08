@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.06.23.41"
+OCM_VERSION="24.11.08.16.20"
 
 update_ocm_script() {
 # cd ~ && rm -rf ocm.sh && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
@@ -17,12 +17,10 @@ sleep 1s
 }
 
 select_item() {
-    echo "ocm.sh version 24.11.06.23.41"
+    echo "ocm.sh version 24.11.08.16.20"
     echo "https://t.me/ocm_g"
     echo "1. Update ocm.sh"
-    echo "2. Autonomys(space-acres GUI)-Linux"
-    echo "3. Autonomys(subspace    CLI)-Linux(coming soon)"
-    echo "4. Autonomys(Pool H9)        -Linux(coming soon)"
+    echo "2. Autonomys(subspace)Linux"
     echo "0. Exit"
     read -rp "Select item:" item
     case "$item" in
