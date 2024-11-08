@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.34"
+AUTONOMYS_VERSION="24.11.08.16.41"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -38,7 +38,7 @@ fi
 space_farmer() {
 change_dir
 if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
-  cho "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
   sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
