@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.41"
+AUTONOMYS_VERSION="24.11.08.16.46"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
 WALLET_ADDRESS=""
+NODE_RPC_URL=""
 PATH_TO_FARM=""
 PLOT_SIZE=""
 
@@ -49,6 +50,9 @@ fi
 if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
 fi
+if [ -z "$NODE_RPC_URL" ]; then
+  read -rp "NODE_RPC_URL : " NODE_RPC_URL
+fi
 if [ -z "$PATH_TO_FARM" ]; then
   read -rp "PATH_TO_FARM : " PATH_TO_FARM
 fi
@@ -57,6 +61,7 @@ if [ -z "$PLOT_SIZE" ]; then
 fi
 ./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 farm \
   --reward-address $WALLET_ADDRESS \
+  --node-rpc-url $NODE_RPC_URL \
   path=$PATH_TO_FARM,size=$PLOT_SIZE
 }
 
