@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.30"
+AUTONOMYS_VERSION="24.11.08.16.32"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -13,7 +13,7 @@ change_dir() {
   cd ~
   mkdir -p "$AUTONOMYS_DIR"
   cd "$AUTONOMYS_DIR"
-  mkdir -p "$PATH_TO_FARM"
+  # mkdir -p "$PATH_TO_FARM"
 }
 
 chmod_wget() {
