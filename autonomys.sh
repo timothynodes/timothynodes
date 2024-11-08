@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.32"
+AUTONOMYS_VERSION="24.11.08.16.34"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -62,7 +62,7 @@ fi
 
 select_item() {
   echo "1. Autonomys(GUI-Linux)space-acres     0.2.0-x86_64.AppImage"
-  echo "2. Autonomys(CLI-Linux)subspace-node   2024-nov-06"
+  echo "2. Autonomys(CLI-Linux)subspace-node   2024-nov-06(Coming soon)"
   echo "3. Autonomys(CLI-Linux)subspace-farmer 2024-nov-06"
   echo "0. Exit"
   read -rp "Select item:" item
