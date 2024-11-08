@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.16.46"
+AUTONOMYS_VERSION="24.11.08.16.50"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -62,6 +62,7 @@ fi
 ./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 farm \
   --reward-address $WALLET_ADDRESS \
   --node-rpc-url $NODE_RPC_URL \
+  --listen-on /ip4/0.0.0.0/tcp/30533 \
   path=$PATH_TO_FARM,size=$PLOT_SIZE
 }
 
