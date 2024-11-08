@@ -1,41 +1,84 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.08.11.23"
+AUTONOMYS_VERSION="24.11.08.12.33"
 AUTONOMYS_DIR="autonomys"
+NODE_DATA_PATH=""
+YOUR_NODE_NAME=""
+WALLET_ADDRESS=""
+PATH_TO_FARM=""
+PLOT_SIZE=""
+
+change_dir() {
+  cd ~
+  mkdir -p "$AUTONOMYS_DIR"
+  cd "$AUTONOMYS_DIR"
+}
+
+chmod() {
+  chmod u+x space-acres-*
+  chmod u+x subspace-*
+}
 
 space_acres() {
-cd ~
-mkdir -p "$AUTONOMYS_DIR"
-cd "$AUTONOMYS_DIR"
+change_dir
 if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
   # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
-  chmod u+x space-acres-0.2.0-x86_64.AppImage
+  chmod
   ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
 fi
 ./squashfs-root/AppRun
 }
 
+space_farmer() {
+change_dir
+if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
+  # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  sudo apt update && \
+  sudo apt install libc6 -y && \
+  sudo apt install libpango-1.0-0 -y
+  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06
+  chmod
+fi
+if [ -z "$WALLET_ADDRESS" ]; then
+  read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
+fi
+if [ -z "$PATH_TO_FARM" ]; then
+  read -rp "PATH_TO_FARM : " PATH_TO_FARM
+fi
+if [ -z "$PLOT_SIZE" ]; then
+  read -rp "PLOT_SIZE : " PLOT_SIZE
+fi
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 farm \
+  --reward-address $WALLET_ADDRESS \
+  path=$PATH_TO_FARM,size=$PLOT_SIZE
+}
+
 select_item() {
-    echo "1. space-acres-0.2.0-x86_64.AppImage"
-    echo "0. Exit"
-    read -rp "Select item:" item
-    case "$item" in
-    1)
-        space_acres
-        ;;
-    0)
-        exit 1
-        ;;
-    *)
-        clear
-        sleep 1s
-        select_item
-        ;;
+  echo "1. Autonomys(GUI-Linux)space-acres     0.2.0-x86_64.AppImage"
+  echo "2. Autonomys(CLI-Linux)subspace-node   2024-nov-06"
+  echo "3. Autonomys(CLI-Linux)subspace-farmer 2024-nov-06"
+  echo "0. Exit"
+  read -rp "Select item:" item
+  case "$item" in
+  1)
+    space_acres
+    ;;
+  3)
+    space_farmer
+    ;;
+  0)
+    exit 1
+    ;;
+  *)
+    clear
+    sleep 1s
+    select_item
+    ;;
     esac
 }
 select_item
