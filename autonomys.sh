@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.10.14.10"
+AUTONOMYS_VERSION="24.11.10.14.30"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -56,12 +56,15 @@ if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
 fi
 if [ -z "$NODE_RPC_URL" ]; then
+  echo "ex : ws://192.168.1.213:9944"
   read -rp "NODE_RPC_URL : " NODE_RPC_URL
 fi
 if [ -z "$PATH_TO_FARM" ]; then
+  echo "ex : /mnt"
   read -rp "PATH_TO_FARM : " PATH_TO_FARM
 fi
 if [ -z "$PLOT_SIZE" ]; then
+  echo "ex : 800G"
   read -rp "PLOT_SIZE : " PLOT_SIZE
 fi
 ./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 farm \
