@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.10.06.33"
+OCM_VERSION="24.11.10.07.21"
 
 update_ocm_script() {
 # cd ~ && rm -rf ocm.sh && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
 cd ~ && rm -rf ocm.sh_new && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh -O ocm.sh_new
-if [ ! -s "~/ocm.sh_new" ]; then
+if [ -s "~/ocm.sh_new" ]; then
   rm -rf ocm.sh && mv ocm.sh_new ocm.sh && chmod u+x ocm.sh
 fi
 echo -e "=================================================="
@@ -17,7 +17,7 @@ sleep 1s
 }
 
 select_item() {
-    echo "ocm.sh version 24.11.08.16.20"
+    echo "ocm.sh version 24.11.10.07.21"
     echo "https://t.me/ocm_g"
     echo "1. Update ocm.sh"
     echo "2. Autonomys(subspace)Linux"
