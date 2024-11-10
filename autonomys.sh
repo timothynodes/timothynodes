@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.10.06.28"
+AUTONOMYS_VERSION="24.11.10.07.13"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -21,14 +21,18 @@ chmod_wget() {
   chmod u+x s*
 }
 
-space_acres() {
-change_dir
-if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
+apt_upgrade() {
   # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
   sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
   sudo apt install libpango-1.0-0 -y
+}
+
+space_acres() {
+change_dir
+if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
+  apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
   chmod_wget
   ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
@@ -36,14 +40,15 @@ fi
 ./squashfs-root/AppRun
 }
 
+space_acres_rm() {
+change_dir
+rm -f space-acres-0.2.0-x86_64.AppImage
+}
+
 space_farmer() {
 change_dir
 if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
-  # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
-  sudo apt update && \
-  sudo apt upgrade -y && \
-  sudo apt install libc6 -y && \
-  sudo apt install libpango-1.0-0 -y
+  apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06
   chmod_wget
 fi
@@ -67,14 +72,18 @@ fi
 }
 
 select_item() {
-  echo "1. Autonomys(GUI-Linux)space-acres     0.2.0-x86_64.AppImage"
-  echo "2. Autonomys(CLI-Linux)subspace-node   2024-nov-06(Coming soon)"
+  echo "1. Autonomys(GUI-Linux)space-acres       0.2.0-x86_64.AppImage"
+  echo "2. Autonomys(GUI-Linux)space-acres rm -f 0.2.0-x86_64.AppImage"
   echo "3. Autonomys(CLI-Linux)subspace-farmer 2024-nov-06"
+  echo "4. Autonomys(CLI-Linux)subspace-node   2024-nov-06(Coming soon)"  
   echo "0. Exit"
   read -rp "Select item:" item
   case "$item" in
   1)
     space_acres
+    ;;
+  2)
+    space_acres_rm
     ;;
   3)
     space_farmer
