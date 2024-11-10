@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # variable
-OCM_VERSION="24.11.08.16.20"
+OCM_VERSION="24.11.10.06.33"
 
 update_ocm_script() {
 # cd ~ && rm -rf ocm.sh && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh && chmod u+x ocm.sh && ./ocm.sh
 cd ~ && rm -rf ocm.sh_new && wget https://ghp.ci/https://raw.githubusercontent.com/timothynodes/timothynodes/refs/heads/main/ocm.sh -O ocm.sh_new
-if [ ! -f "~/ocm.sh_new" ]; then
+if [ ! -s "~/ocm.sh_new" ]; then
   rm -rf ocm.sh && mv ocm.sh_new ocm.sh && chmod u+x ocm.sh
 fi
 echo -e "=================================================="
