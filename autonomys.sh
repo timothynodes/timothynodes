@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.10.07.13"
+AUTONOMYS_VERSION="24.11.10.13.55"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -32,7 +32,7 @@ apt_upgrade() {
 space_acres() {
 change_dir
 if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
-  apt_upgrade
+  # apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
   chmod_wget
   ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
@@ -48,7 +48,7 @@ rm -f space-acres-0.2.0-x86_64.AppImage
 space_farmer() {
 change_dir
 if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
-  apt_upgrade
+  # apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06
   chmod_wget
 fi
