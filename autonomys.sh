@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.11.01.45"
+AUTONOMYS_VERSION="24.11.11.01.50"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -59,7 +59,7 @@ fi
   --farmer \
   --base-path $PATH_TO_NODE \
   --rpc-cors all  --rpc-methods unsafe  \
-  --in-peers 128 --out-peers 32 --rpc-listen-on  0.0.0.0:9944 \
+  --in-peers 32 --out-peers 8 --rpc-listen-on  0.0.0.0:9944 \
   --listen-on /ip4/0.0.0.0/tcp/30333 \
   --dsn-listen-on /ip4/0.0.0.0/tcp/30433
 }
@@ -95,8 +95,8 @@ fi
 
 select_item() {
   echo "1. Autonomys(Ubuntu 24.04)space-acres       0.2.0-x86_64.AppImage"
-  echo "2. Autonomys(Linux CLI)subspace-node   2024-nov-06"
-  echo "3. Autonomys(Linux CLI)subspace-farmer 2024-nov-06" 
+  echo "2. Autonomys(Linux CLI)subspace-node        2024-nov-06"
+  echo "3. Autonomys(Linux CLI)subspace-farmer      2024-nov-06" 
   echo "0. Exit"
   read -rp "Select item:" item
   case "$item" in
