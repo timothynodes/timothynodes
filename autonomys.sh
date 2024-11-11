@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.11.01.35"
+AUTONOMYS_VERSION="24.11.11.01.45"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
 WALLET_ADDRESS=""
 NODE_RPC_URL=""
 PATH_TO_FARM=""
+PATH_TO_NODE=""
 PLOT_SIZE=""
 
 change_dir() {
@@ -41,6 +42,26 @@ fi
 }
 
 space_node() {
+change_dir
+if [ ! -f "subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-06" ]; then
+  # apt_upgrade
+  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-06
+  chmod_wget
+fi
+if [ -z "$PATH_TO_NODE" ]; then
+  echo "ex : /mnt"
+  read -rp "PATH_TO_NODE : " PATH_TO_NODE
+fi
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-06 run \
+  --chain mainnet \
+  --blocks-pruning 256 \
+  --state-pruning archive-canonical \
+  --farmer \
+  --base-path $PATH_TO_NODE \
+  --rpc-cors all  --rpc-methods unsafe  \
+  --in-peers 128 --out-peers 32 --rpc-listen-on  0.0.0.0:9944 \
+  --listen-on /ip4/0.0.0.0/tcp/30333 \
+  --dsn-listen-on /ip4/0.0.0.0/tcp/30433
 }
 
 space_farmer() {
@@ -54,7 +75,7 @@ if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
 fi
 if [ -z "$NODE_RPC_URL" ]; then
-  echo "ex : ws://192.168.1.213:9944"
+  echo "ex : ws://127.0.0.1:9944"
   read -rp "NODE_RPC_URL : " NODE_RPC_URL
 fi
 if [ -z "$PATH_TO_FARM" ]; then
@@ -62,7 +83,7 @@ if [ -z "$PATH_TO_FARM" ]; then
   read -rp "PATH_TO_FARM : " PATH_TO_FARM
 fi
 if [ -z "$PLOT_SIZE" ]; then
-  echo "ex : 800G"
+  echo "ex : 2G"
   read -rp "PLOT_SIZE : " PLOT_SIZE
 fi
 ./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 farm \
