@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.10.14.30"
+AUTONOMYS_VERSION="24.11.11.01.35"
 AUTONOMYS_DIR="autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -40,9 +40,7 @@ fi
 ./squashfs-root/AppRun
 }
 
-space_acres_rm() {
-change_dir
-rm -f space-acres-0.2.0-x86_64.AppImage
+space_node() {
 }
 
 space_farmer() {
@@ -76,9 +74,8 @@ fi
 
 select_item() {
   echo "1. Autonomys(Ubuntu 24.04)space-acres       0.2.0-x86_64.AppImage"
-  echo "2. Autonomys(Ubuntu 24.04)space-acres rm -f 0.2.0-x86_64.AppImage"
-  echo "3. Autonomys(Linux CLI)subspace-farmer 2024-nov-06"
-  echo "4. Autonomys(Linux CLI)subspace-node   2024-nov-06(Coming soon)"  
+  echo "2. Autonomys(Linux CLI)subspace-node   2024-nov-06"
+  echo "3. Autonomys(Linux CLI)subspace-farmer 2024-nov-06" 
   echo "0. Exit"
   read -rp "Select item:" item
   case "$item" in
@@ -86,7 +83,7 @@ select_item() {
     space_acres
     ;;
   2)
-    space_acres_rm
+    space_node
     ;;
   3)
     space_farmer
