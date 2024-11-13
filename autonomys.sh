@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.13.12.35"
+AUTONOMYS_VERSION="24.11.13.12.42"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -32,11 +32,11 @@ apt_upgrade() {
 
 space_acres() {
 change_dir
-if [ ! -f "space-acres-0.2.0-x86_64.AppImage" ]; then
+if [ ! -f "space-acres-0.2.3-x86_64.AppImage" ]; then
   # apt_upgrade
-  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.0/space-acres-0.2.0-x86_64.AppImage
+  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.3/space-acres-0.2.3-x86_64.AppImage
   chmod_wget
-  ./space-acres-0.2.0-x86_64.AppImage  --appimage-extract
+  ./space-acres-0.2.3-x86_64.AppImage  --appimage-extract
 fi
 ./squashfs-root/AppRun
 }
@@ -97,7 +97,7 @@ fi
 
 select_item() {
   echo "1. Autonomys(Ubuntu 24.04)space-acres       0.2.0-x86_64.AppImage"
-  echo "2. Autonomys(Linux CLI)subspace-node        2024-nov-13(background)"
+  echo "2. Autonomys(Linux CLI)subspace-node        2024-nov-13"
   echo "3. Autonomys(Linux CLI)subspace-farmer      2024-nov-13" 
   echo "0. Exit"
   read -rp "Select item:" item
