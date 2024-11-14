@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.14.00.20"
+AUTONOMYS_VERSION="24.11.14.00.30"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -47,7 +47,8 @@ if [ ! -f "subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2" ]; then
   # apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13-2/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2
   chmod_wget
-  ln -s subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13 subspace-node
+  rm -f subspace-node
+  ln -s subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2 subspace-node
 fi
 if [ -z "$PATH_TO_NODE" ]; then
   echo "ex : /node"
@@ -71,7 +72,8 @@ if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2" ]; then
   # apt_upgrade
   wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13-2/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2
   chmod_wget
-  ln -s subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13 subspace-farmer
+  rm -f subspace-farmer
+  ln -s subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2 subspace-farmer
 fi
 if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
