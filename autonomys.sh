@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.14.00.30"
+AUTONOMYS_VERSION="24.11.17.04.30"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -24,6 +24,15 @@ chmod_wget() {
 
 apt_upgrade() {
   # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  sudo apt update && \
+  sudo apt upgrade -y && \
+  sudo apt install libc6 -y && \
+  sudo apt install libpango-1.0-0 -y \
+  sudo apt autoremove -y \
+  sudo apt update && \
+  sudo apt upgrade -y && \
+  sudo apt install libc6 -y && \
+  sudo apt install libpango-1.0-0 -y \
   sudo apt update && \
   sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
