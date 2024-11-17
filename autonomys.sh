@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.17.08.30"
+AUTONOMYS_VERSION="24.11.17.09.30"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -23,7 +23,7 @@ chmod_wget() {
 }
 
 apt_upgrade() {
-  # echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
+  # disk-expand && logs-off && echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list && \
   sudo apt update && \
   sudo apt upgrade -y && \
   sudo apt install libc6 -y && \
