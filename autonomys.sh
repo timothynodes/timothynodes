@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.17.09.30"
+AUTONOMYS_VERSION="24.11.18.11.30"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -37,23 +37,23 @@ apt_upgrade() {
 
 space_acres() {
 change_dir
-if [ ! -f "space-acres-0.2.3-x86_64.AppImage" ]; then
+if [ ! -f "space-acres-0.2.4-x86_64.AppImage" ]; then
   # apt_upgrade
-  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.3/space-acres-0.2.3-x86_64.AppImage
+  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.4/space-acres-0.2.4-x86_64.AppImage
   chmod_wget
-  ./space-acres-0.2.3-x86_64.AppImage  --appimage-extract
+  ./space-acres-0.2.4-x86_64.AppImage  --appimage-extract
 fi
 ./squashfs-root/AppRun
 }
 
 space_node() {
 change_dir
-if [ ! -f "subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2" ]; then
+if [ ! -f "subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-18" ]; then
   # apt_upgrade
-  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13-2/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2
+  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-18/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-18
   chmod_wget
   rm -f subspace-node
-  ln -s subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2 subspace-node
+  ln -s subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-18 subspace-node
 fi
 if [ -z "$PATH_TO_NODE" ]; then
   echo "ex : /node"
@@ -73,12 +73,12 @@ fi
 
 space_farmer() {
 change_dir
-if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2" ]; then
+if [ ! -f "subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-18" ]; then
   # apt_upgrade
-  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13-2/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2
+  wget https://ghp.ci/https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-18/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-18
   chmod_wget
   rm -f subspace-farmer
-  ln -s subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13-2 subspace-farmer
+  ln -s subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-18 subspace-farmer
 fi
 if [ -z "$WALLET_ADDRESS" ]; then
   read -rp "WALLET_ADDRESS : " WALLET_ADDRESS
@@ -103,9 +103,9 @@ fi
 }
 
 select_item() {
-  echo "1. Autonomys(Ubuntu 24.04)space-acres       space-acres-0.2.3-x86_64.AppImage"
-  echo "2. Autonomys(Linux CLI)subspace-node        2024-nov-13-2"
-  echo "3. Autonomys(Linux CLI)subspace-farmer      2024-nov-13-2" 
+  echo "1. Autonomys(Ubuntu 24.04) space-acres-0.2.4-x86_64.AppImage"
+  echo "2. Autonomys(Linux CLI)    subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-18"
+  echo "3. Autonomys(Linux CLI)    subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-18" 
   echo "0. Exit"
   read -rp "Select item:" item
   case "$item" in
