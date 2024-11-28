@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.18.11.30"
+AUTONOMYS_VERSION="24.11.28.16.00"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -37,11 +37,11 @@ apt_upgrade() {
 
 space_acres() {
 change_dir
-if [ ! -f "space-acres-0.2.4-x86_64.AppImage" ]; then
+if [ ! -f "space-acres-0.2.8-x86_64.AppImage" ]; then
   # apt_upgrade
-  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.4/space-acres-0.2.4-x86_64.AppImage
+  wget https://ghp.ci/https://github.com/autonomys/space-acres/releases/download/0.2.8/space-acres-0.2.8-x86_64.AppImage
   chmod_wget
-  ./space-acres-0.2.4-x86_64.AppImage  --appimage-extract
+  ./space-acres-0.2.8-x86_64.AppImage  --appimage-extract
 fi
 ./squashfs-root/AppRun
 }
