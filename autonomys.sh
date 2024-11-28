@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # variable
-AUTONOMYS_VERSION="24.11.28.16.00"
+AUTONOMYS_VERSION="24.11.28.16.30"
 AUTONOMYS_DIR="ocm/autonomys"
 NODE_DATA_PATH=""
 YOUR_NODE_NAME=""
@@ -103,7 +103,7 @@ fi
 }
 
 select_item() {
-  echo "1. Autonomys(Ubuntu 24.04) space-acres-0.2.4-x86_64.AppImage"
+  echo "1. Autonomys(Ubuntu 24.04) space-acres-0.2.8-x86_64.AppImage"
   echo "2. Autonomys(Linux CLI)    subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-18"
   echo "3. Autonomys(Linux CLI)    subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-18" 
   echo "0. Exit"
